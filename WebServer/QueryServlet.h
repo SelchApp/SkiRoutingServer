@@ -48,6 +48,11 @@ public:
     const int s = srcId;//lexicalCast<int>(getVariable(p, "src"));
     const int t = tarId; //lexicalCast<int>(getVariable(p, "tar"));
 
+    if (s == t) {
+      Response("{\"steps\":[]}").write(c);
+      return;
+    }
+
     dij.run(s, t);
 
 
